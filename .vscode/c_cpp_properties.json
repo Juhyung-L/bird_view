@@ -7,14 +7,15 @@
       },
       "includePath": [
         "/opt/ros/humble/include/**",
-        "/usr/include/**",
-        "${workspaceFolder}/**"
+        "/home/dev_ws/src/bird_view/include/**",
+        "/home/dev_ws/src/keyboard_teleop/include/**",
+        "/usr/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu11",
-      "cppStandard": "c++17"
+      "cppStandard": "c++14"
     }
   ],
   "version": 4

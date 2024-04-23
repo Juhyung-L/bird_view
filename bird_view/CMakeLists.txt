@@ -5,7 +5,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   # add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_AUTOUIC ON)
@@ -83,12 +82,20 @@ if(BUILD_TESTING)
   # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+  find_package(ament_cmake_gtest REQUIRED)
+  find_package(ament_cmake_pytest REQUIRED)
+  add_subdirectory(test)
 endif()
 
 install(TARGETS
   main
   # test_buffer_manager
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch_test
+  DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()

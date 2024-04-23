@@ -37,25 +37,18 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libsdl2-2.0-0 \
     libopencv-dev \
     libcanberra-gtk-module \
-    qtbase5-dev \
-    qt5-qmake \
     && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /home/dev_ws
-
-# setup bashrc settings
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
-    echo "source /usr/share/gazebo/setup.bash" >> ~/.bashrc && \
-    echo "alias b='source /home/dev_ws/install/setup.bash'" >> ~/.bashrc
-
-# setup entrypoint
-COPY ./gazebo_entrypoint.sh /
-RUN chmod +x /gazebo_entrypoint.sh
-
-ENTRYPOINT ["/gazebo_entrypoint.sh"]
 
 # personal packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
    vim \
    gdb \
+   gdbserver \
    && rm -rf /var/lib/apt/lists/*
+
+# setup bashrc settings
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
+    echo "source /usr/share/gazebo/setup.bash" >> ~/.bashrc && \
+    echo "alias b='source /home/dev_ws/install/local_setup.bash'" >> ~/.bashrc
+
+WORKDIR /home/dev_ws

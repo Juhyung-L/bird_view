@@ -71,12 +71,12 @@ def generate_launch_description():
         arguments=['-d', rviz_config_file],
         condition=IfCondition(launch_rviz)
     )
-    # keyboard_teleop_node = Node(
-    #     package='keyboard_teleop',
-    #     executable='keyboard_teleop',
-    #     name='keyboard_teleop',
-    #     output='screen'
-    # )
+    keyboard_teleop_node = Node(
+        package='keyboard_teleop',
+        executable='keyboard_teleop',
+        name='keyboard_teleop',
+        output='screen'
+    )
 
     # launch other launch files
     robot_world_launch = IncludeLaunchDescription(
@@ -103,5 +103,5 @@ def generate_launch_description():
 
         robot_world_launch,
         rviz_node,
-        # keyboard_teleop_node,
+        keyboard_teleop_node,
     ])

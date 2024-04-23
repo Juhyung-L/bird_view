@@ -8,19 +8,15 @@
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile"
 	},
-	"runArgs": ["--rm", 
-				"--privileged", 
-				"--net=host", 
+	"runArgs": ["--rm",
+				"--privileged",
+				"--net=host",
 				"--env=DISPLAY", // share host display environment for displaying GUI
-				"--env=QT_X11_NO_MITSHM=1", 
-				// "--volume=/tmp/.X11-unix:/tmp/.X11-unix", // share host XServer with container
-				"--name=camera_view_cont",
-				// enable cuda in container
-				"--runtime=nvidia",
-				"--env=NVIDIA_VISIBLE_DEVICES=all", // specify which GPU to use inside container
-				"--env=NVIDIA_DRIVER_CAPABILITIES=all" // specify which nvidia drivers to enable inside container
+				"--env=QT_X11_NO_MITSHM=1",
+				"--volume=/tmp/.X11-unix:/tmp/.X11-unix", // share host XServer with container
+				"--name=camera_view_cont"
 	],
-	"workspaceFolder": "/home/dev_ws",
+	"workspaceFolder": "/home/dev_ws/src",
 	"mounts": [
 		"source=camera_view_volume,target=/home/dev_ws,type=volume"
 	],
