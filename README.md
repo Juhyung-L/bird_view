@@ -3,7 +3,7 @@ GUI application that shows the bird's eye view using 3 cameras attached to the l
 
 This application was developed for my university's (University of Rochester) senior design project in which my team and I were tasked on designing a device that can help our wheelchair-bound client in visualizing his surroundings.
 
-Detailed explanation at: https://juhyungsprojects.blogspot.com/2023/12/birds-eye-view-for-wheelchair.html
+Detailed explanation at: https://juhyunglee0313.wixsite.com/portfolio/post/bird-s-eye-view-for-wheelchair
 
 [![Watch the video](https://img.youtube.com/vi/UO8QxPaMO_c/maxresdefault.jpg)](https://youtu.be/UO8QxPaMO_c)
 
